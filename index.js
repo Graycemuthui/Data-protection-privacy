@@ -22,8 +22,6 @@ app.post("/", (req, res) => {
 
   console.log(otp, text);
   if (text === "") {
-    console.log("eeee");
-
     response = `CON Welcome 
         1. sign in`;
   } else if (text === "1") {
@@ -38,7 +36,7 @@ app.post("/", (req, res) => {
   function sendsms() {
     const AfricasTalking = require("africastalking")(credentials);
     const sms = AfricasTalking.SMS;
-    otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
     console.log(otp);
 
     const message = `Your OTP for 2FA: ${otp}`;
